@@ -1,0 +1,37 @@
+# ── Large legacy MATLAB data (>100 MB – not tracked, see Zenodo) ────────────
+GeoMIP_pr.mat
+GeoMIP_tas.mat
+data_all_SOCOL.mat
+precip.mat
+
+# ── Large processed intermediates (download from Zenodo) ────────────────────
+data_py/GeoMIP_pr.npz
+data_py/GeoMIP_tas.npz
+data_py/data_all_SOCOL.npz
+
+# ── Presentations ────────────────────────────────────────────────────────────
+*.pptx
+
+# ── Legacy EPS figures ───────────────────────────────────────────────────────
+*.eps
+
+# ── Old / duplicate root-level figures and documents ────────────────────────
+# Keep uncertainties_3.pdf (paper schematic) and py_outputs/; exclude everything else
+/*.pdf
+!uncertainties_3.pdf
+/*.jpg
+/*.png
+Africa_SOCOL/
+
+# ── Python build artifacts ───────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# ── macOS metadata ───────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── Claude Code session memory (internal tooling) ───────────────────────────
+.claude/
