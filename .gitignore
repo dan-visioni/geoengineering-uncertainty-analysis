@@ -33,5 +33,37 @@ __pycache__/
 .DS_Store
 **/.DS_Store
 
+# ── MATLAB legacy scripts (not part of the manuscript release) ──────────────
+*.m
+
+# ── Non-manuscript notebooks (excluded from repository) ─────────────────────
+python/src/compare_g6s.py
+python/src/plot_AOD.py
+python/src/plot_AOD_vs_tas.py
+python/src/plot_HS_PRECT.py
+python/src/plot_HS_TREFHT.py
+python/src/plot_HS_countries.py
+python/src/plot_g6vsSSPunc.py
+python/src/plot_maps.py
+python/src/plot_maps_15k.py
+python/src/plot_tas_vs_pr.py
+python/src/plot_uncertainty.py
+python/src/save_SOCOL.py
+j_notebooks/compare_g6s.ipynb
+j_notebooks/plot_AOD.ipynb
+j_notebooks/plot_AOD_vs_tas.ipynb
+j_notebooks/plot_HS_PRECT.ipynb
+j_notebooks/plot_HS_TREFHT.ipynb
+j_notebooks/plot_HS_countries.ipynb
+j_notebooks/plot_g6vsSSPunc.ipynb
+j_notebooks/plot_maps.ipynb
+j_notebooks/plot_maps_15k.ipynb
+j_notebooks/plot_tas_vs_pr.ipynb
+j_notebooks/plot_uncertainty.ipynb
+j_notebooks/save_SOCOL.ipynb
+
+# ── Zenodo staging folder (local upload prep, not part of repo) ──────────────
+zenodo_upload/
+
 # ── Claude Code session memory (internal tooling) ───────────────────────────
 .claude/
