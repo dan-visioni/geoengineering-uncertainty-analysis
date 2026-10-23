@@ -1,0 +1,359 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL visioni_etal_AGU.tex     Tue Oct  6 15:27:10 2026
+%DIF ADD visioni_etal_AGU_2.tex   Tue Oct  6 15:06:40 2026
+% AGUJournalTemplate.tex adapted for:
+% "A framework for understanding and narrowing modeling uncertainties
+%  for Stratospheric Aerosol Injection (SAI)"
+% Visioni, Kravitz, MacMartin, Sukodolov, Chiodo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[draft]{agujournal2019}
+\usepackage{url}
+%DIF 10a10
+\usepackage{amsmath} %DIF > 
+%DIF -------
+\usepackage{lineno}
+\usepackage[inline]{trackchanges}
+\usepackage{soul}
+\linenumbers
+
+\newcommand{\tcr}{\textcolor{red}}
+\newcommand{\tcb}{\textcolor{blue}}
+
+\draftfalse
+
+\journalname{AGu Advances}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  TITLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{A framework for understanding and narrowing uncertainties for Solar Radiation Modification modeling experiments}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  AUTHORS AND AFFILIATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\authors{Daniele Visioni\affil{1}, Ben Kravitz\affil{2}, Douglas G. MacMartin\affil{3}, Timofei Sukodolov\affil{4}, Gabriel Chiodo\affil{5}, Sandro Vattioni\affil{4,6}}
+
+\affiliation{1}{Department of Earth and Atmospheric Sciences, Cornell University, Ithaca, NY, 14850, USA}
+\affiliation{2}{Department of Earth and Atmospheric Sciences, Indiana University, Bloomington, IN, 47405, USA}
+\affiliation{3}{Sibley School of Mechanical and Aerospace Engineering, Cornell University, Ithaca, NY 14850, USA}
+\affiliation{4}{Physikalisch-Meteorologisches Observatorium Davos/World Radiation Center, Davos, Switzerland}
+\affiliation{5}{Instituto de Geociencias, CSIC, Madrid, 28040}
+\affiliation{6}{Institute of Atmosphere and Climate Science (IAC), ETH Zurich, Zurich, Switzerland}
+
+\correspondingauthor{Daniele Visioni}{dv224@cornell.edu}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% KEY POINTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{keypoints}
+\item Inter-model uncertainties from a \DIFaddbegin \DIFadd{$\sim$}\DIFaddend 2$^{\circ}$C warming \DIFaddbegin \DIFadd{above pre-industrial }\DIFaddend are larger than those from SAI aimed at \DIFdelbegin \DIFdel{avoiding that warming }\DIFdelend \DIFaddbegin \DIFadd{counteracting that warming in the same model ensemble}\DIFaddend .
+\item Aerosol transport and microphysics uncertainties drive over 61\% of inter-model SAI uncertainty in temperature and 64\% in precipitation.
+\item Strategy and target choices dominate \DIFdelbegin \DIFdel{regional precipitation spread}\DIFdelend \DIFaddbegin \DIFadd{uncertainties in the regional pattern of precipitation}\DIFaddend , so SRM assessments must specify which uncertainty source they mean.
+\end{keypoints}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABSTRACT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+A clear conceptualization of what constitutes an uncertainty, and what its sources are, is crucial to understanding how they can be constrained. For Solar Radiation Modification (SRM), this is important as we grapple with deciding how (and if) to pursue research programs capable of narrowing its related uncertainties.
+
+We propose to separate \DIFdelbegin \DIFdel{“uncertainty” }\DIFdelend \DIFaddbegin \DIFadd{``uncertainty'' }\DIFaddend for SRM evaluation into the following macro-categories: storyline uncertainty, which includes scenario, target and strategy uncertainty; and physical uncertainty, which can be investigated through the exploration of inter-model SRM uncertainty (Earth system processes specific to SRM) and inter-model climate \DIFaddbegin \DIFadd{response }\DIFaddend uncertainty (underlying uncertainty in the representation of climatic processes).
+
+We apply our framework to model simulations of stratospheric aerosol injections (SAI) and find that: 1) \DIFdelbegin \DIFdel{in the same models, inter-model uncertainties }\DIFdelend \DIFaddbegin \DIFadd{within the same model ensemble, uncertainty in surface temperature and precipitation }\DIFaddend due to increases in temperatures of \DIFdelbegin \DIFdel{~}\DIFdelend \DIFaddbegin \DIFadd{$\sim$}\DIFaddend 2$^{\circ}$C \DIFdelbegin \DIFdel{are larger than inter-model uncertainties }\DIFdelend \DIFaddbegin \DIFadd{above pre-industrial is larger than uncertainty }\DIFaddend from SAI aimed at avoiding that increase, independently of spatial aggregation considered, (68\% larger for temperatures, 23\% larger for precipitation); 2) inter-model SAI uncertainties are strongly driven by uncertainties in the simulation of aerosols and their transport, including their downstream impacts, and we conclude that resolving such uncertainties \DIFaddbegin \DIFadd{through model development and constraint approaches }\DIFaddend has the potential to reduce overall uncertainties by over 60\%; 3) uncertainties related to the deployment of different aerosols in one model are small compared to inter-model SRM uncertainties; 4) for different strategies and scenarios with one model, we conclude that, while \DIFdelbegin \DIFdel{globally }\DIFdelend \DIFaddbegin \DIFadd{global }\DIFaddend temperature and precipitation are overwhelmingly driven by target uncertainty, regionally the strategy uncertainty can be a relevant portion of the overall storyline uncertainty.
+\end{abstract}
+
+\section*{Plain Language Summary}
+Solar Radiation Modification (SRM) --- the idea of reducing incoming sunlight to partially offset global warming --- and its related uncertainties raise many scientific questions, but it is rarely made clear \emph{which} uncertainties are being discussed in the literature. We propose a structured framework that separates SRM modeling uncertainty into categories: storyline uncertainties (what scenario, goal, and method of deployment are chosen) and physical uncertainties (how different climate models respond to the same climate forcings). Using a large set of model simulations of stratospheric aerosol injection (SAI), we find that the spread of model results for a world with more warming is actually larger than for a world in which that warming is counteracted by SAI. We also find that the largest source of specifically SAI-related model disagreement comes from how different models simulate the behavior of aerosols in the stratosphere. Our framework helps clarify what types of research could reduce which uncertainties, and cautions against treating SRM uncertainty as a single, monolithic concept.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BODY TEXT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+The concept of scientific uncertainty has long occupied a central place in the philosophy of science. The fundamental epistemological challenge, as outlined firstly by David Hume, is that no finite set of observations can justify universal claims about nature \cite{Rosenberg_1993}. In the 20th century, various philosophers expanded on this observation, which was intended as the evidence of a limitation of empirical knowledge, by establishing uncertainty as the defining feature of scientific inquiry, rather than a flaw: the fact that scientific theories can be falsified is a strength of the scientific process \cite{popper2005logic,lakatos1974popper,Slavov2018-SLAHTP}.
+
+Climate science (and more specifically, climate models) exemplifies more than other fields the challenges and importance of conceptualizing scientific uncertainty \cite <see, for instance, the work of Elizabeth Lloyd, especially>[]{Lloyd_2010}. Climate models are indispensable tools for projecting future climate conditions, yet they are subject to multiple sources of uncertainty: the more familiar, simple categorization of such uncertainties include: i) structural uncertainty from model design, ii) parametric uncertainty from input values, and iii) scenario uncertainty from socio-economic assumptions \cite{Hawkins2009,Lehner2020}. Various, more detailed and specific proposed frameworks to classify these uncertainties exist \cite{Frigg2015,BEVAN2022102919}, with the purpose to identify opportunities for further improvement, as well as to provide a basis for decision-making in the context of unresolvable uncertainties. It is also important to acknowledge, however, that such uncertainties --- and the perception of the ``uncertainty'' of climate science --- have been used as leverage to cast doubt on climate science as a whole \cite{LEWANDOWSKY20151}.
+
+Considering scientific uncertainty in policy-relevant fields cannot be done without also including societal considerations. \citeA{Douglas2009-DOUSPA-2} importantly argued that non-epistemic values---such as ethical, social, or political considerations---play a legitimate and often necessary role in scientific reasoning, especially when uncertainty is high and the consequences of error are significant. In climate science, decisions about how much evidence is sufficient to warrant policy action cannot be made purely on epistemic grounds; they also depend on judgments about acceptable risk and societal priorities.
+
+While this discussion has been happening for decades in the context of climate science in general \cite{Oreskes2004}, there is far more sparse literature when it comes to climate intervention methods, and Solar Radiation Modification (SRM) in particular. The idea itself is ``simple'' from a physical perspective: if climate change is a result of an energy imbalance, due to more greenhouse gases increasing Earth's emissivity, such an imbalance might be reduced if incoming solar radiation is reduced through one or more methods that can help reflect some of it before it reaches the surface \cite{Budyko1977,Govin2003}. The apparent simplicity, however, belies an even more intricate ethical and sociopolitical landscape than for climate change. While plenty of emerging literature outlines the various ethical concerns related to SRM \cite <for a recent review, see>[]{Flegal2019}, less has been said about how the conceptualization of scientific uncertainty in the SRM context has shaped discussions of SRM itself \cite <an exception being>[]{Wiertz2016}. To understand the importance of such framing, we can consider the difference between how scientific uncertainties are understood or perceived between climate change and SRM in relation to the Precautionary Principle (PP). In one of its main formulations the PP states that ``Where there are threats of serious and irreversible damage, lack of scientific certainty shall not be used as a reason for postponing cost-effective measures to prevent environmental degradation'' (Article 15 of the 1992 Rio Declaration on Environment and Development; see \citeA{Hopster2023} for a recent discussion of the PP in the context of climate uncertainty). Using this framework for climate change has usually been understood to mean that a lack of certainty over the impacts of global warming should not be an obstacle for emission reductions, and that further information over the severity of the impacts are needed to inform better adaptation practices, rather than to simply determine the urgency with which mitigation is required. For SRM however, due to the deliberate nature of the intervention, and to its fundamental design aspect \cite{Kravitz2016}, the application of the principle is more complicated, and can be applied in different ways \cite{Tedsen2013,Davies_Vinders_2025}, also depending on how the concept of uncertainty and its capacity to be reduced is treated: at the two extremes, one can argue that both the potential risks and uncertainties from SRM are too large (and unresolvable) to ever consider, while on the other, that the real risks of climate change are too large not to consider SRM \cite{Baiman2024}. In between these, there is space to consider if and how SRM uncertainties could be reduced through further research, and what kind of research, and how such a reduction could affect overall assessments of SRM risks and potential decisions around deployments.
+In the following section, we will review some relevant examples from the scientific literature and international reports where SRM is discussed in the context of its uncertainties, as a starting point for the rest of our discussion.
+
+\subsection{SRM and Uncertainties in Past Literature and Scientific Assessments}
+
+The natural place to start for such a review is the Intergovernmental Panel on Climate Change (IPCC) reports. The IPCC has over time developed its own framework for characterizing and communicating uncertainty, which it defines as ``a state of incomplete knowledge that can result from a lack of information or from disagreement about what is known or even knowable'' \cite{IPCC_2013_WGI_SPM}. As discussed in \citeA{mastrandrea2011ipcc}, the IPCC refined its own language around uncertainty in order to characterize the findings of the assessment processes, namely around two complementary metrics: confidence, which synthesizes the type, amount, quality, and consistency of evidence and the degree of agreement among experts, and quantification of likelihood, which expresses quantified probabilities of outcomes based on statistical analysis or expert judgment.
+
+The IPCC, in its Working Group III (Mitigation of Climate Change) Sixth Assessment Report \cite{IPCC_2022_WGIII}, mentions multiple times the presence of uncertainties related to Solar Radiation Modification (SRM). The most relevant excerpts are reported below (emphasis on the word uncertainty or similar words are ours):
+
+\begin{enumerate}
+    \item ``Solar radiation modification (SRM) could potentially cool the planet rapidly at low estimated direct costs by reflecting incoming sunlight, but entails uncertain side effects and thorny international equity and governance challenges [...]''
+    \item ``Understanding the climate response to SRM remains subject to large uncertainties [...]''
+    \item ``There also are significant uncertainties surrounding SRM, including uncertainties on the costs and risks, which can substantially alter the amount of SRM used in modelled pathways''
+    \item ``[...] there is low confidence in understanding of the climate response to SRM at the regional scale [...]''
+    \DIFaddbegin \item \DIFaddend ``Nevertheless, large uncertainties still exist for climate processes associated with SRM options (e.g. aerosol-cloud radiation interaction)''
+\end{enumerate}
+
+This list is useful to understand how the concept of ``uncertainty'' is used in IPCC literature related to SRM. There is a generic understanding that uncertainties relate both to the \DIFaddbegin \DIFadd{background }\DIFaddend scenario under consideration, and thus to socio-political decisions (quotes 1, 3), and to a purely physical lack of knowledge in specific processes (quote 5); however, very often (as in quote 4), low confidence in the understanding of the climate process is given, and the generic existence of large uncertainties is highlighted (quote 5).
+
+Properly identifying and characterizing such uncertainties in more detail is of fundamental importance, whatever the opinion about SRM as a whole. For instance, the U.S. National Academy of Science, Engineering and Medicine in their 2021 report ``Recommendations for Solar Geoengineering Research and Research Governance'' \cite{NASEM2021} is more specific about what some of these uncertainties are:
+
+``[...] large uncertainties remain regarding the cooling potential with injection amount, location, and type and regarding the effects of an increased aerosol burden on atmospheric chemistry, transport, and resulting regional and local effects on climate; these contribute to uncertainty in climate response and resulting impacts around the world [...]''
+
+and uses those as leverage to argue for a well-developed research program:
+
+``A principal goal of any research program should be to better characterize and reduce scientific and societal uncertainties concerning the benefits and risks of SG deployment (relative to global warming in the absence of SG). However, there are limits on the level of uncertainty reduction that can be expected, and it is possible that additional research may expand particular uncertainties or reveal new uncertainties [...].''
+
+On the other hand, the presence of uncertainty has also been used to argue for a full stop to any research in SRM, as for instance in the ``Non-Use Agreement'' proposed by \citeA{Biermann2022}, where the observation that: ``[...] Impacts are likely to vary across regions, as artificial cooling will affect some regions more than others. There are also uncertainties about the effects on regional weather patterns, agriculture, and the provision of basic needs of food and water. [...]'' is followed by the claim that: ``Even with more research, there is deep-seated disagreement about whether the risks and effectiveness of solar geoengineering could ever be fully understood before deployment, and whether specific effects could be attributed afterwards to such interventions.[...].'' However, in this final quote, no specific reason is given as to why this degree of unknowability is specific to SRM and not to climate change as a whole --- if (as the IPCC reports show, over time), both understanding and attribution of climate change can improve over time \cite{IPCC_2021_WGI}, why is this not possible for SRM?
+
+\subsection{A Framework for Discussing Uncertainties in SRM}
+
+Here, we draw on the methodology proposed by \citeA{Hawkins2009} (hereafter, HS09) to partition uncertainty in the case of climate change to propose a similar framework for the case of SRM (and in particular, SAI in our analyses). We note that a somewhat similar classification was provided in the meta-literature review of SRM research papers by \citeA{maattanen_uncertainties_2024}: here, however, we suggest some further expansions to it, and we quantify some of these uncertainties using available model simulations.
+
+A useful metric to assess SRM modeling uncertainty at a global, regional or local level is a quantification of the spread across different modeling predictions of SRM for a specific climatic variable. Modeling spread is only a proxy for the overall uncertainty --- both because the range of scenarios is never comprehensive, and because even if the models were fully converging over one projection (therefore, reducing the model spread to zero), that would not necessarily mean that \DIFdelbegin \DIFdel{that }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend projection would be accurate. Nevertheless, model spread is, at this point, a good way to understand models' agreement and disagreement, especially in a comparison across different cases (solar dimming versus SAI versus increased warming), rather than as a stand-alone measure.
+
+Considering the differences between uncertainty sources between GHG concentrations and SRM cases, we propose to separate this uncertainty framework in different facets, adopting and formalizing a nomenclature already widely used\DIFdelbegin \DIFdel{:
+}\DIFdelend \DIFaddbegin \DIFadd{. With such a formalization, we hope to enable more precise strategies that can explore and explain sources of uncertainties in the context of SRM, highlighting those that should leverage a broader set of expertises compared to just climate science, those specific to climate science whose narrowing and eventual resolution would be beneficial for both climate change scenarios and SRM scenarios, and those of much more narrow focus mainly for SRM scenarios but that can be investigated through more targeted activities (which might include, potentially, also small-scale outdoor experiments). 
+}\DIFaddend 
+
+\begin{enumerate}
+    \item \textbf{Emissions scenario uncertainty.} For projecting future climate change, there is an unresolvable uncertainty that arises from socio-political-economical choices that are beyond the purview of climate science to predict. A sampling of this kind of uncertainty can be achieved through an exploration of different radiative forcings. In general, such a sampling is the outcome of Integrated Assessment Model (IAM) simulations, across a range of future (usually, end of century) top-of-atmosphere radiative forcings to which the emissions from the IAMs have to converge. Rather than being prescriptive about both likelihood and preferability of one scenario over another, the frameworks of the Representative Concentration Pathways (RCPs) before and of the Representative Emission Pathways (REPs) more recently are meant to span a range of, at least in principle, plausible scenarios and to compare them to one another. We continue using a similar nomenclature as done in HS09, mainly because all SRM simulations are normally built on top of such scenarios, but later on we will discuss how scenario uncertainty could be impacted by SRM in ways currently largely unexplored in the modeling literature.
+
+    \item \textbf{Target uncertainty.} This kind of uncertainty is on top of the scenario uncertainty previously defined: for any underlying climate change scenario, one can imagine a scenario in which SRM is deployed to achieve a specific target, defined as the global- or regional-scale objective of the technique under consideration. This can be surface temperature (global or regional) or global radiative forcing, but also, as it has been demonstrated, this could be precipitation based, or targeting sea-ice recovery, and one could target similarly other large-scale environmental variables \cite{Lee-etal-2020}. Just like for scenario uncertainty, exploring one or more target scenarios is not necessarily meant to imply a specific likelihood or preferability of one target over another, and key insights can be gained by analyzing how different targets affect regional and local uncertainty. In a sense, outside of the SRM space, the IPCC Special Report on the impacts of global warming of 1.5$^{\circ}$C \cite{IPCC_2018_SR15} (and the scenarios developed for it) can be similarly considered as an exercise in exploring uncertainties given specific temperature targets.
+
+    \item \textbf{Strategy uncertainty.} This kind of uncertainty is even more specific to SRM, as it deals with the fact that a given large-scale target can be achieved in different ways. In fact, it is also true that the same radiative forcing target for a climate change scenario can be achieved through different combinations of emissions, and especially for short-lived climate forcers such as aerosols, their location matters as well --- but this is largely subsumed into the scenario in the RCP framework. For SRM, the importance of considering different strategies has been highlighted in the recent literature, and given the intentionality of an SRM intervention, it cannot be as easily overlooked.
+
+    \item \textbf{Inter-model climate \DIFaddbegin \DIFadd{response }\DIFaddend uncertainty.} In general, for climate change, this uncertainty can be understood as the difference across models given a specific underlying radiative forcing or perturbation. However, when including SRM, it is useful to separate this underlying inter-model climate \DIFaddbegin \DIFadd{response }\DIFaddend uncertainty that comes directly from the climatic response to the exact same forcing (hence, assessing the strengths of different climatic feedbacks and responses) from the specific uncertainty arising from a simulated SRM method.
+
+    \item \textbf{Inter-model SRM uncertainty.} Based on the definition above, we can then identify this uncertainty as the inter-model variance given the same method of SRM, and within it the same target and strategy. In our case, we will show how it might be possible to separate the specific inter-model uncertainty arising from the SRM technique (i.e., a process-level uncertainty over aerosol processes), as opposed to the underlying inter-model differences due to differences in simulated surface climate processes.
+
+    \item \textbf{Internal variability.} Finally, just like in HS09, this represents the natural variability of the climate system which can affect, especially at the local scale, assessments over a specific trend due to one or more forcing changes.
+\end{enumerate}
+
+Scenario, target, and strategy uncertainties \DIFdelbegin \DIFdel{could }\DIFdelend \DIFaddbegin \DIFadd{can }\DIFaddend be grouped under a more general term of \textbf{Storyline uncertainty}, indicating the uncertainties that depend on the details of the future pathway undertaken and that can be explored through different methodologies of scenario analyses, including understanding of \DIFdelbegin \DIFdel{likelihood, feasibility , }\DIFdelend \DIFaddbegin \DIFadd{feasibility or political plausibility, and that can be explored through engineering studies, different kind of sociotechnical modeling, role-plays and convening }\DIFaddend etc. Inter-model climate \DIFaddbegin \DIFadd{response }\DIFaddend uncertainty and inter-model SRM uncertainty \DIFdelbegin \DIFdel{could }\DIFdelend \DIFaddbegin \DIFadd{can }\DIFaddend be grouped into a more general term of \textbf{Physical uncertainty}, hence explorable directly through inter-model comparisons, perturbed parameter ensembles, \DIFdelbegin \DIFdel{and model hierarchies }\DIFdelend \DIFaddbegin \DIFadd{model hierarchies and targeted new observations or experiments}\DIFaddend . And finally, internal variability \DIFdelbegin \DIFdel{could }\DIFdelend \DIFaddbegin \DIFadd{can }\DIFaddend be kept separate and considered as a fundamental factor related to the predictability of climate at different temporal and spatial scales, explorable through, for example, large ensembles. 
+
+
+\section{Methods}
+
+In order to analyze the various aspects of modeling uncertainty in SRM, we use here a set of SAI simulations, all of them already discussed in previous works. In particular, we use the following datasets:
+
+\begin{enumerate}
+    \item Simulations from Phase 6 of the Geoengineering Model Intercomparison Project (GeoMIP), in particular a set of simulations from 6 models that provided simulations for SSP2-4.5, SSP5-8.5, G6solar (reduction of the solar constant) and G6sulfur (injection of sulfur or prescribed aerosols) \cite{Visioni2021}. In these simulations, the level of cooling under the SSP5-8.5 emission scenario was adjusted in each model to reduce the global mean temperature down to the values in SSP2-4.5.
+    \item Simulations from SOCOL that include SSP2-4.5, SSP5-8.5 and G6sulfur including simulations under the same G6sulfur deployment strategy but using three different other kinds of aerosols for SAI \cite{Geurts2026}.
+    \item Simulations using CESM2-WACCM6 that include SSP2-4.5 and a set of SAI simulations using SO$_2$ injections at different magnitudes (to reduce temperatures to 1.5, 1.0 and 0.5 $^{\circ}$C above Preindustrial) and with different strategies for the same level of cooling (symmetrical injections at 0$^{\circ}$, 15$^{\circ}$, 30$^{\circ}$ and 60$^{\circ}$ N/S and injections at different latitudes) to pursue multiple cooling objectives, including global mean temperature, interhemispheric and equator-to-pole temperature gradients. Past work has shown that, especially at \DIFdelbegin \DIFdel{not too high }\DIFdelend \DIFaddbegin \DIFadd{modest }\DIFaddend levels of cooling ($\sim$2 K), this set successfully spans the space of possible hemispherically-balanced strategies \cite{zhang_how_2022}.
+\end{enumerate}
+
+All results are compared to a baseline simulation. For the GeoMIP6 simulations, the reference case will be the SSP2-4.5 simulation, so that the inter-model spread is calculated as the difference, per each model, between its own simulation with a ``lower'' level of warming and one with either a higher level of warming (SSP5-8.5) or where such warming is compensated through solar dimming or SAI. For the CESM2-WACCM6 simulations, the baseline period against which simulations are compared is the 2010--2029 period, that is, where CESM2 reaches 1.5 $^{\circ}$C above Preindustrial.
+
+In this work we do not explicitly address the topic of model evaluation. We take the results of the models' spread at face value for both climate change and SRM projections. While many of the models used have been validated extensively against volcanic eruptions, leading to some confidence over the large-scale results, this does not necessarily address how to interpret model spread in light of the shortcomings that do exist in reproducing the climatic impacts of volcanic eruptions as a proxy for SAI.
+
+
+\section{Results}
+
+\subsection{Scenario Uncertainty in SRM}
+
+Contrary to the HS09 analyses, in the case of SRM simulations the emission scenario uncertainty (how much different models warm given the same GHG concentrations) is not analyzable directly, especially at the global level: if the target of an SRM method (as designed in a climate model simulation) is to reduce global mean temperature or radiative forcing to a specified target in every model, then any such target can be pursued by increasing the amount of SRM. Two models producing the same cooling from an increase of stratospheric aerosol optical depth will still need a different amount of aerosols in the stratosphere if their rate of warming in response to a change in GHG concentrations is different. As shown in \citeA{Visioni2021}, there is also not necessarily a correlation between sensitivity to stratospheric aerosol cooling and transient climate response across models \cite <similarly, independently verified in CMIP6 models for volcanic eruptions in>[]{Pauling2023}. In Figure~\ref{geomip_scheme}, we show an example of this by looking at the results of the G6sulfur experiment. Firstly, the targeted cooling (here, from SSP5-8.5 to SSP2-4.5) already sub-selects for two out of the 5 SSP scenarios available in CMIP6. Secondly, the different warming between the two scenarios in the participating models, which is visible in Figure~\ref{geomip_scheme}, is then ``collapsed'' in the different participating ESMs, as they can achieve the same temperature target by providing different levels of SRM forcing.
+
+Hence, we can say that, at the global level, the inter-model uncertainty arising from differences in transient climate response to GHGs is not erased by SRM, but rather, the surface uncertainty in the response is replaced by a spread over the magnitude of the intervention, as models can reduce the solar constant (or increase the aerosol load) more depending on the models' responses \cite{MacMartin2018_paris}. For SAI in particular, this implies that the global uncertainty is shifted from the surface (for the variables and metrics targeted) to the stratosphere by affecting the necessary aerosol \DIFdelbegin \DIFdel{load}\DIFdelend \DIFaddbegin \DIFadd{optical depth and injection amounts}\DIFaddend . However, some residual patterns of change arising from the mismatch between the GHG and SRM forcing, even on the targeted surface variables, may still depend on the magnitude of warming, and therefore on the underlying emission scenario uncertainties \cite{Visioni2023,Zhang2024,henry2023comparison}.
+
+\begin{figure}
+\noindent\includegraphics[width=\textwidth]{uncertainties_3.pdf}
+\caption{Schematic figure explaining the ``collapsing'' or shifting of scenario uncertainty and of global scale inter-model uncertainty under multi-model SRM simulations. \DIFaddbeginFL \DIFaddFL{The first panel shows the underlying concentrations of CO$_2$ as prescribed by the different SSPs, with the SSP5-8.5 and SSP2-4.5 scenarios in blue and red, respectively, and the other SSP scenarios in grey for reference. The second panel shows modeled annual mean, global mean surface temperature under SSP5-8.5 (colored solid lines, one per model) relative to SSP2-4.5 (illustrating inter-model spread in warming). The third panel (bottom right) shows the same anomaly for the G6sulfur experiment, demonstrating how targeting the same global temperature collapses the surface spread while shifting uncertainty to the required aerosol injection amount. The fourth panel shows the changes in stratospheric AOD in the G6sulfur experiment.}\DIFaddendFL }
+\label{geomip_scheme}
+\end{figure}
+
+\subsection{Inter-Model SRM Uncertainty: Isolating Aerosol Uncertainties}
+
+Isolating a specific inter-model SRM uncertainty can be challenging. In Earth System Model simulations, when multiple things are changing at once (GHGs, land use, tropospheric aerosols, as well as SRM deployment), disentangling a single cause of change without multiple sensitivity experiments can be difficult. At the same time, while simpler simulations in fixed-SST and/or time-slice setups can lead to the identification of specific sources of inter-model spread, they might fail to capture the whole range of interactions.
+
+Here, we consider how inter-model SRM uncertainties can be better separated in the case of SAI. Using the G6solar and G6sulfur simulations we show how one can disentangle the uncertainties that specifically arise from differences in stratospheric aerosol responses. The solar dimming simulations (G6solar) can be considered as ``simpler'', in that the models all apply the forcing in the same way --- a reduction in the solar constant implies the same geographical distribution of the top-of-atmosphere reduced forcing, even if their radiative code might treat the changes in radiation differently. In the SAI simulations (G6sulfur), on the other hand, even given the same level of global forcing, the aerosols are transported differently, and will have different sizes, meaning different scattering properties and lifetimes, leading to different geographical distributions of the top-of-atmosphere forcing, stratospheric perturbations and efficacy \cite{Tilmes2022}.
+
+If one can envision an idealized case in which aerosol uncertainty is completely resolved, that is, one could apply the same aerosol distribution and the same radiative forcing \DIFdelbegin \DIFdel{to a specific aerosol distribution }\DIFdelend \DIFaddbegin \DIFadd{from that aerosol distribution to all models}\DIFaddend , the remaining inter-model uncertainty would be similar (to first order) to that of a solar dimming experiment. This excludes that, even given the same dynamical response in the stratosphere, there might be secondary responses to it that might differ (i.e., the same stratospheric heating might lead to different responses in the tropospheric circulation). However, we assume that such differences are small compared to the aerosol forcing itself, and that it is also compensated by the fact that, under solar dimming, the models would also be slightly different in their stratospheric responses \cite{Bednarz2022}. Nevertheless, the purpose here is not to perfectly identify and quantify all uncertainties, but to ascertain some form of separability so that we can identify which uncertainties are most important and how to resolve them.
+
+\begin{figure}
+\noindent\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/GeoMIP_uncertainties_aerosols.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/GeoMIP_uncertainties_aerosols_2.png}
+\DIFaddendFL \caption{Quantification of the fraction of model uncertainties driven by aerosol uncertainties in GeoMIP6 simulations, calculated as in Equation~\ref{eqn.frsulf}, using G6sulfur and G6solar inter-model spread results for the 2080--2100 period\DIFaddbeginFL \DIFaddFL{. The variance is computed from annual mean values at each grid-box}\DIFaddendFL , \DIFdelbeginFL \DIFdelFL{and averaged }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{aggregated }\DIFaddendFL over IPCC regions, \DIFaddbeginFL \DIFaddFL{and is }\DIFaddendFL here color-coded by continent for surface air temperature (tas) and mean precipitation (pr). The global value aggregated from the regions is shown in black (61\% for surface air temperatures and 64\% for precipitation).}
+\label{aerosols}
+\end{figure}
+
+Using this approach, Figure~\ref{aerosols} quantifies how much larger uncertainties are for SAI compared to solar dimming simulations. This is evaluated assuming that, if there was no added uncertainty due to the aerosols, the variance of the two different ensembles would be similar ($\sigma^2_{\mathrm{solar}} = \sigma^2_{\mathrm{sulfur}}$), and that the driver of the solar dimming uncertainty is the inter-model differences in the underlying climate responses due to the combination of climate change and SRM. If there is increased variance due to the aerosol uncertainties, then on average the fractional variance, calculated as
+\begin{linenomath*}
+\begin{equation}\label{eqn.frsulf}
+\mbox{fr}_{\mathrm{sulf}} = 1 -\frac{\sigma^2_{\mathrm{solar}}}{\sigma^2_{\mathrm{solar}}+\sigma^2_{\mathrm{sulfur}}}
+\end{equation}
+\end{linenomath*}
+will be larger than 50\% \DIFdelbegin \DIFdel{. }\DIFdelend \DIFaddbegin \DIFadd{(equivalently, $\mbox{fr}_{\mathrm{sulf}} = 50\%$ when $\sigma^2_{\mathrm{solar}} = \sigma^2_{\mathrm{sulfur}}$, i.e., when aerosols contribute no additional variance). }\DIFaddend We find that in the vast majority of IPCC regions (75\%), uncertainties are higher when considering the simulations using aerosol injections for both surface temperature and precipitation, with only a few regions showing smaller values for one of the two variables, but none for the two combined: this means that the aerosol uncertainty drives a substantial part of the uncertainty, with global values of variance being on average 57\% higher for surface temperatures and 75\% higher for precipitation.
+
+\subsection{Inter-Model Uncertainties: Isolating Differences in Climatic Feedbacks Between Warming and Preventing Warming \DIFaddbegin \DIFadd{under SRM}\DIFaddend }
+
+While Figure~\ref{aerosols} highlights the important driver of aerosol uncertainty in multi-model SRM simulations, it does not directly address how uncertainties from SRM compare to uncertainties under climate change. To do so, in this section we compare the G6sulfur increases in variance with the SSP5-8.5 ones. In \citeA{Visioni2021}, it was already pointed out that inter-model spread for G6sulfur appeared to be smaller than inter-model spread for SSP5-8.5, mainly for surface temperatures and less so for precipitation \cite <e.g.,>[]{MarMartin2015}. Here, we quantify this in a more robust way using a similar method as done in the previous section, by defining a potential increase in uncertainty through a quantification of increases in variance by comparing the two cases against the variance in the G6solar case:
+\begin{linenomath*}
+\begin{align}
+    &\mbox{Increase}_{\mathrm{sulf}} = \frac{\sigma^2_{\mathrm{sulfur}}}{\sigma^2_{\mathrm{solar}}}\label{eqn.increase.sulf} \\
+    &\mbox{Increase}_{\mathrm{ssp}} = \frac{\sigma^2_{\mathrm{ssp}}}{\sigma^2_{\mathrm{solar}}}\label{eqn.increase.solar}
+\end{align}
+\end{linenomath*}
+calculated over the last 20 years of simulation (2080--2100). This compares the simulations G6solar (which is still not really in steady state), for which the amount of uncertainty is just due to different response in models to the compensation of longwave forcing from GHGs through a reduction in SW forcing, with G6sulfur, where the compensation is spatially different due to the different aerosol distributions, leading to different climatic responses. Furthermore, we expand our analyses considering if different levels of spatial aggregation (here, exemplified by regridding the different model results to different horizontal resolutions) affect our conclusions. Analyzing different models, with their own specific resolution, always requires a regridding from a common grid, and this provides us with an opportunity to test if our analyses of uncertainty are affected. This is particularly important as, in other cases, we aggregate the results we show by either continent or IPCC region for ease of display.
+
+In Figure~\ref{aggregation}, which \DIFdelbegin \DIFdel{plots }\DIFdelend \DIFaddbegin \DIFadd{shows the results of }\DIFaddend Equations~\ref{eqn.increase.sulf} \DIFdelbegin \DIFdel{--}\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend \ref{eqn.increase.solar}, we find some important results. Firstly, for both surface temperature and precipitation, overall uncertainty is lower for the SAI simulations compared to the one with increased warming. In particular, with higher levels of uncompensated warming, uncertainties in local temperature changes are (compared with the median value of the solar reduction case) 120\% higher, whereas for SAI the uncertainties are 55\% higher. For precipitation, our analyses show that there is still a large uncertainty even under the G6solar case, and the increase in uncertainty driven by the uncompensated warming is 50\% higher, whereas it is 25\% higher for the compensated case with SAI. Summarizing, SAI-driven uncertainties in GeoMIP modeling results are roughly half as large as GHG-driven uncertainties. The median value we obtain (which is more appropriate here to use given the large number of points, hence being less sensitive to outliers, which can also be affected by internal variability) is, importantly, not sensitive to different degrees of spatial aggregation: whether considering a common 15$^{\circ}$ grid, the changes in variance are the same as when considering a 1$^{\circ}$ grid. Nevertheless, when considering smaller regions (such as a 1$^{\circ}$ pixel), the single results will be greatly affected by internal variability, so our results do not imply that uncertainty does not grow larger with smaller regions: rather, that as a whole, differences in uncertainties between the cases are not sensitive to the spatial aggregation chosen. While our choice of aggregation is not the same as a statistical or dynamical approach to downscaling, it can provide some insight to what one could expect when such methods are applied to coarse-resolution SRM modeling results: that the overall partitioning of uncertainty between downscaled simulations of SRM compared to downscaled simulations of climate change should not be qualitatively different (i.e., that the ratio in the spread of potential outcomes between the two should remain similar). While there is a paucity of such downscaling efforts for now, initial results seem to suggest this is true \cite{Sun2026}.
+
+\begin{figure}
+\noindent\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/GeoMIP_spatial_uncertainties.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/GeoMIP_spatial_uncertainties_2.png}
+\DIFaddendFL \caption{Scatter plots of inter-model variance \DIFaddbeginFL \DIFaddFL{increase relative to G6solar }\DIFaddendFL (calculated from Equations~\ref{eqn.increase.sulf} \DIFdelbeginFL \DIFdelFL{--}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and }\DIFaddendFL \ref{eqn.increase.solar}) under higher warming \DIFaddbeginFL \DIFaddFL{(x-axis: $\mbox{Increase}_{\mathrm{ssp}}$) }\DIFaddendFL and under SAI \DIFaddbeginFL \DIFaddFL{(y-axis: $\mbox{Increase}_{\mathrm{sulf}}$), }\DIFaddendFL per each grid-box (with different colors indicating different spatial aggregation, see legend), for surface air temperature (panel a) and precipitation (panel b) considering the 2080--2099 period. The black point represents the median value for the cloud of points for the \DIFdelbeginFL \DIFdelFL{1 degree }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{2$^{\circ}$ }\DIFaddendFL resolution, with error bars representing the 98th percentile of the distribution.}
+\label{aggregation}
+\end{figure}
+
+\subsection{Uncertainties in the Climatic Response to Different Aerosol Types}
+
+We now define our overall uncertainty as $\sigma^2_{\mathrm{tot}} = \sigma^2_{\mathrm{solar}}+\sigma^2_{\mathrm{sulfur}}+\sigma^2_{\mathrm{aerosols}}$ to identify how much the inclusion of other aerosols affects the overall uncertainty. To compute this, we use $\sigma^2_{\mathrm{solar}}$ and $\sigma^2_{\mathrm{sulfur}}$ as before from the G6sulfur ensemble and calculate $\sigma^2_{\mathrm{aerosols}}$ as the variance in results across different aerosol types from the SOCOL ensemble \DIFaddbegin \DIFadd{(computed from annual mean values)}\DIFaddend .
+
+We provide an example of our analyses for the IPCC African regions in Figure~\ref{africa_socol}, including for informational purposes also SSP5-8.5 variance across the GeoMIP ensemble. Africa is the only region, as already pointed out in \citeA{Visioni2021}, where variance was high even under G6solar, so it is an interesting case. For temperature, the difference in warming (from the baseline) ranges between 1 and 2 K, whereas G6solar and G6sulfur show similar, yet smaller, uncertainties, which are centered around 0 K by design, as the global target is correctly reflected in the regional multi-model mean. The SOCOL results present much smaller uncertainties for the aerosol material itself, which makes sense if we consider that temperature changes are more directly driven by where the aerosols are, rather than their type, which would mainly affect secondary impacts such as stratospheric heating-induced surface changes. For precipitation, the situation is more complex and highly heterogeneous. This indicates both the importance of more localized assessments, including a mechanistic understanding of the local drivers, as well as care in making broader assessments about continent-level impacts.
+
+\begin{figure}
+\noindent\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/Africa_SOCOL.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/Africa_SOCOL_2.png}
+\DIFaddendFL \caption{Annual mean surface temperature changes (top panels) and annual mean precipitation changes (bottom panels) in the 7 Earth System Models in GeoMIP6 (including SOCOL) compared to SSP2-4.5 in each African IPCC region. Lighter lines represent ensemble means per each model, while thicker lines represent the multi-model ensemble. Standard deviation for the multi-model ensembles for the period 2080--2099 is shown on the right of each plot. \DIFaddbeginFL \DIFaddFL{The legend distinguishes between GeoMIP multi-model results (G6sulfur (GeoMIP), G6solar (GeoMIP)) and the SOCOL aerosol-variant ensemble (SOCOL (aerosol variants)).}\DIFaddendFL }
+\label{africa_socol}
+\end{figure}
+
+The results for the partitioning of the overall uncertainty for all IPCC regions is shown in Figure~\ref{socol_uncertainty}. Overall, this shows a broad consistency with results highlighted for Africa for temperature, with most of the uncertainty driven by overall aerosol uncertainties, whereas for precipitation, Europe presents a clear outlier, with a larger fraction of the uncertainty driven by the aerosol type rather than only by aerosol uncertainties, potentially driven by the sensitivity of European precipitation to the North Atlantic Oscillation (NAO), and the potential impacts of stratospheric heating on the NAO \cite{Jones2022,Banerjee2021}.
+
+\begin{figure}
+\noindent\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/GeoMIP_uncertainties_aerosols_SOCOL_tas_pr.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/GeoMIP_uncertainties_aerosols_SOCOL_tas_pr_2.png}
+\DIFaddendFL \caption{Assessment of fractional variance (with $\sigma^2_{\mathrm{tot}} = \sigma^2_{\mathrm{solar}}+\sigma^2_{\mathrm{sulfur}}+\sigma^2_{\mathrm{aerosols}}$) for the GeoMIP6 ensembles, including SOCOL simulations with different aerosol types, for surface air temperature (panel a) and precipitation (panel b) for the 2080--2099 period. \DIFdelbeginFL \DIFdelFL{The }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Each point on the }\DIFaddendFL x-axis \DIFdelbeginFL \DIFdelFL{in both plots shows each different }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{corresponds to one }\DIFaddendFL IPCC \DIFaddbeginFL \DIFaddFL{AR6 }\DIFaddendFL region, whereas the continent-level average is shown with a thick black line (also labeled on the x-axis).}
+\label{socol_uncertainty}
+\end{figure}
+
+\subsection{Scenario, Strategy and Target Uncertainty}
+
+As remarked in the previous sections, the choice of a specific temperature target in SRM simulations collapses the uncertainty related to the global modeled temperature response to GHGs. What the G6 GeoMIP simulations cannot do is help us understand what is the uncertainty of models' response to different targets and strategy, as they sub-select for one single scenario. In this section therefore we look at results for one single model (CESM2-WACCM) for which multiple strategies and targets are available. Building on work by \citeA{zhang_how_2022}, Figures~\ref{strategy_tas} (surface temperature) and \ref{strategy_pr} (precipitation) show how uncertainty across these other dimensions can inform total uncertainty, calculated as
+\begin{linenomath*}
+\begin{equation}
+\sigma^2_{\mathrm{tot}} = \sigma^2_{\mathrm{strategy}}+\sigma^2_{\mathrm{scenario}}+\sigma^2_{\mathrm{internal}}
+\end{equation}
+\end{linenomath*}
+where $\sigma^2_{\mathrm{internal}}$ is calculated using the ensemble spread for all simulations, which include three ensemble members each. At the global level, we find for both temperature and precipitation that the decision of a specific target is the main driver of the \DIFaddbegin \DIFadd{storyline }\DIFaddend uncertainty, with strategy and internal variability playing only a very small part (less than 10\% for temperature, 25\% for precipitation).
+
+\begin{figure}
+\noindent\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/HS_plot_TREFHT_regions_map.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/HS_plot_TREFHT_regions_map_2.png}
+\DIFaddendFL \caption{Partitioning of scenario, strategy, and internal uncertainties at the global (center left) and continental levels for annual mean surface air temperatures. For each region, values of the changes compared to the period 2010--2029 are shown (above), color-coded by strategy and scenario (see legend), whereas the bottom plot shows the \DIFaddbeginFL \DIFaddFL{uncertainty }\DIFaddendFL partitioning \DIFdelbeginFL \DIFdelFL{given }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{into scenario, strategy and inter-annual variability contributions resulting from }\DIFaddendFL the values above.}
+\label{strategy_tas}
+\end{figure}
+
+At the continental level, our analyses show a very distinct behavior for temperature (Figure~\ref{strategy_tas}) and precipitation (Figure~\ref{strategy_pr}). For temperature, on every continent except Antarctica, the scenario uncertainty still plays the largest role (more than 50\% in all regions), with strategy uncertainty and internal variability contributing substantially, but differently by continent. For instance, over North America, strategy uncertainty contributes 23\% in the 2050--2069 period, and internal variability for 20\%, whereas in Asia and Europe the strategy uncertainty is smaller (around 17\%). The particular sensitivity of Antarctic temperature to strategy can be explained by the presence of a more ``polar'' strategy (injections at 60$^{\circ}$N and 60$^{\circ}$S) that act as a distinct way to cool higher latitudes.
+
+Moving to precipitation, we can see that different continents present much larger differences. In South and Central America, the regional precipitation changes are greatly driven by the target uncertainty (just as much as for temperature), whereas in North America and Africa the strategy uncertainty plays as much of a role as the target uncertainty. In all cases, internal variability at the continental level is at least 20\%. Importantly, our results suggest that such uncertainty is not always a function of the magnitude of deployment; that is to say, in most regions, the strategy uncertainty is as relevant in the first decade of deployment as after 30 years. This would have important consequences both imagining the potential preference of a continent for a specific strategy over another and for its implication on how to detect whether a specific chosen strategy is being effective at its intended precipitation target at a regional level.
+
+\begin{figure}
+\noindent\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=\textwidth]{figures/HS_plot_PRECT_regions_map.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=\textwidth]{figures/HS_plot_PRECT_regions_map_2.png}
+\DIFaddendFL \caption{As in Figure~\ref{strategy_tas}, but for annual mean precipitation.}
+\label{strategy_pr}
+\end{figure}
+
+While not directly comparable, it is useful to mention alongside our results, the outcomes of the Precipitation Drivers and Responses MIP \cite <PDRMIP;>[]{PDRMIP2016} as an example of a model intercomparison effort trying to understand how various drivers of precipitation response differ across models. The substantial differences between the two protocols (namely, PDRMIP was focused on tropospheric increases of black carbon and SO$_4$, and had an increase, rather than a decrease, of global insolation) make it hard to do a like-for-like comparison, but in general it is worth noting that they found that tropical regions had a larger inter-model spread, and larger sensitivities to different drivers, compared to mid-latitudinal regions, which can help explain the results over Africa.
+
+
+\section{Beyond Our Analyses: What Is Not Captured in These Categories}
+
+Our methodology has provided a first-order quantification of the main uncertainty categories related to the climate modeling of SRM, using a wide range of SAI simulations. Clearly, analyses limited to climate model results will have the same limitations that the climate models themselves have at this point in time.
+
+Nevertheless, there are several potentially important types of uncertainties that the framework described above cannot capture.
+One example is the interaction between the land and oceanic carbon sinks and SRM. In the SSP CMIP6 scenarios used here, the concentrations of CO$_2$ and other gases are prescribed, and therefore are not directly affected by changes in the carbon cycles simulated by the land models. Previous research has shown that SRM would in fact enhance the carbon cycle \cite{Zhao2024}, both due to the combination of higher CO$_2$ concentrations and lower temperatures and due to the increase in diffuse radiation (a consequence of increased aerosol scattering), which is beneficial for net primary productivity, as it increases the amount of light that can reach the lower layers of the canopy. This potential increase in carbon sinks, which would in turn lead to lower CO$_2$ concentrations under any given SSP under an SRM scenario, is currently unaccounted for in CMIP6 models. On one hand, this leads to an easier separation of the effects of cooling and warming due to the aerosols, while on the other, it is an interaction that would affect the inter-model spread in different ways. Comparing CMIP7 models and scenarios, that will be emission rather than concentration driven \cite{ScenarioMIP}, with CMIP6 ones, will highlight the potential importance of this process.
+
+Current Earth System modeling frameworks do not allow for a direct feedback between possible interventions, or changes in climate impacts, and emissions. This interaction could greatly increase the \DIFdelbegin \DIFdel{scenario }\DIFdelend \DIFaddbegin \DIFadd{storyline }\DIFaddend uncertainty here discussed, considering both potential changes in emissions behavior due to the presence or perception of SAI and changes in economical choices related to emissions mitigation due to changes in risk profiles \cite<climate-society feedbacks, e.g.,>[]{Beckage_2025,Diao2025}. Similarly, if one were to consider the willingness to deploy or not different strategies of SRM based on changes in risk or incentives, this could also affect the strategy and target space: depending on the design of the risk assessments, and on the methods used to understand these interactions (for instance, considering Integrated Assessment Models of different complexity versus models of the human-physical system), different conclusions could be reached about how the overall storyline uncertainty is affected.
+
+
+\section{Conclusions}
+
+In this work, we have tried to provide a consistent framework for understanding and discussing uncertainties in Solar Radiation Modification modeling efforts. We have applied our efforts to a set of solar dimming and Stratospheric Aerosol Injection simulations, but our framework could be expanded to Marine Cloud Brightening or other methods as well. While there are many ways to envision uncertainty as a concept, in the context of those that can be explored through Earth System Modeling, our definition is simply that of a spread in projections at a global, regional and local level \DIFdelbegin \DIFdel{given }\DIFdelend under an envisioned SAI deployment.
+
+We have shown that, when discussing the concept so defined, it is beneficial to expand the usual uncertainty framework considered for climate change simulations, consisting of scenario and inter-model uncertainty (together with internal variability), by separating the first into scenario (referring to the underlying GHG emissions trajectory), target (the purported aim of the SAI deployment), and strategy (the way in which that target can be achieved), whereas the second can be separated into inter-model climate \DIFaddbegin \DIFadd{response }\DIFaddend uncertainty (how different models respond, given the same forcing) and inter-model SAI-specific uncertainty (how, given a specific target and strategy, do different models simulate the SAI deployment). This way, we can clarify the potential for further SAI-specific research to reduce such uncertainties, and separate that more specifically from the underlying climate modeling uncertainty, and we showed that, compared to climate change simulations, SAI-specific uncertainty is, in GeoMIP models, smaller and not larger than climate change uncertainty. In other terms, given a specific scenario, the inter-model spread is larger at any level (global, regional and local) if more warming is allowed to happen, compared to a case in which the warming is avoided through SAI.
+
+The most important caveat of this work is that quantifying a result and its related uncertainty so defined is not the same as the confidence in the reliability of those results. Climate models are well tested and validated, but certainly do not lack shortcomings. Our analyses are based on the assumption that the sub-set of models used here are as reliable for climate change simulations as they are for SAI ones. We think that this is a reasonable conclusion --- ultimately, projections of an Earth System that has less energy imbalance to respond to can be reasonably expected to diverge less \cite{MarMartin2015}. Further \DIFdelbegin \DIFdel{study could show differently}\DIFdelend \DIFaddbegin \DIFadd{studies could however demonstrate or disprove the robustness of this assumption}\DIFaddend , for example, through an analogue of emergent constraints \cite <e.g.,>[]{Hall2019}, which have been instrumental in validating climate models under climate change projections.
+
+It is important to note that our analyses do not imply that this is the only way to quantify modeling uncertainty. Perturbed Parameter Ensembles (PPEs) are another important tool that can help understand how different parameterizations affect the results. But for none of the simulations we have analyzed here is there a PPE available (while some past ones exist), making it unfeasible to integrate them in our quantifications. If such a PPE existed, especially if focused on quantifying aerosol-uncertainty driven variance, it could provide another independent constraint on the $\sigma^2_{\mathrm{aerosols}}$ that we calculated here.
+
+This leads us to outlining another challenge: to make better quantifications than ours, it would be very beneficial to have a consistent set up of simulations across model generations (i.e., CMIP5 to CMIP7). The problem is that, as Earth System Models evolve and improve, so does our understanding of potential SAI strategies, and our definitions of underlying climate scenarios (that is, there is not an easy mapping between emission pathways between CMIP5, CMIP6 and CMIP7, so like-for-like comparisons are complicated). More recent GeoMIP simulations use different scenarios, strategies, and targets, following an evolved understanding from the community, but this, combined with the fact the sample of models used is different across GeoMIP generations, means that a precise assessment of how uncertainties evolve over time as models become more complex remains elusive. A more iterative process \cite <as proposed for instance by>[]{visioni_living2024} in which the same scenarios are simulated with models once a new version is available, or after they have been improved following novel parameterizations or the integration of new observations, would allow for a more concrete quantification of how uncertainties in SAI evolve over time, and show how (and if) they can be reduced as new information comes in.
+
+To summarize this work, it is useful to think through an answer to the question ``Is the climate response to SAI uncertain?''. Granted that the answer one might be tempted to give is always ``It depends'' or ``Compared to what'', our analyses (combined with other results from the past and recent literature) suggest that some more specific yet correct answers could be as follows:
+
+\begin{enumerate}
+    \item At the global level, there is full agreement between climate models that an increase in the stratospheric aerosol load would lead to reduced global mean temperatures due to a negative radiative forcing. There is uncertainty over how much increase in stratospheric aerosol load would be necessary given a specific cooling target (i.e., to cool by 1$^{\circ}$C globally), or how much SO$_2$ would be necessary to achieve such an increase. Such uncertainty arises from SAI-specific inter-model uncertainties and, partly, are also a function of the strategy uncertainty. When considering CO$_2$ emissions, and the interaction between emissions and concentrations, a part of the uncertainty can also arise from climate uncertainties related to the carbon cycle response.
+    \item At the regional level, given a specific amount of cooling and a specific injection strategy, there is uncertainty in both the temperature and precipitation regional response arising both from SAI-specific inter-model uncertainties (how the aerosols spread over the globe) and underlying inter-model climatic uncertainty (how the models respond to the same exact forcing). However, current modeling results suggest that, in the same set of models, inter-model uncertainty in response to a specific amount of warming is on average larger for both temperature and precipitation in a scenario in which global warming increases, compared to a scenario in which such global warming is prevented with SAI. This assumes an equal confidence in the climate models' responses to a GHG forcing and to a stratospheric aerosol forcing.
+    \item The uncertainties in the modeled regional responses to SAI also depend on the overall chosen target (how much cooling) and strategy (how to achieve that cooling). For a comprehensive set of different strategies that aim to cool both hemispheres with some symmetry, the regional temperature response is mainly driven by decisions over the global cooling target, whereas the regional precipitation responses in most regions are equally driven by the details of the strategy chosen.
+\end{enumerate}
+
+Overall, these three points underscore the importance of clarifying exactly which source of uncertainty one is thinking of when discussing them in the context of SAI, especially as it pertains to reducing them. It is likely that inter-model climate \DIFaddbegin \DIFadd{response }\DIFaddend uncertainties can be reduced through the same mechanisms that would reduce inter-model uncertainties pertaining to global warming projections (higher horizontal resolution, better parameterizations, better mechanistic understanding, and resolution of underlying regional climate processes), whereas inter-model SAI uncertainties may be reducible through research that better resolves stratospheric processes, from nucleation of particles to large-scale transport to stratosphere-troposphere coupling given a stratospheric perturbation. On the other hand, \DIFaddbegin \DIFadd{storyline uncertainties (}\DIFaddend scenario, target and strategy\DIFdelbegin \DIFdel{uncertainties }\DIFdelend \DIFaddbegin \DIFadd{) }\DIFaddend belong to a much fuzzier --- but not less important --- domain, in which ``more research'' is not necessarily going to constrain them in the future. Partly, they can be constrained by focusing on plausible scenarios\DIFdelbegin \DIFdel{(which is the most likely paths that emissions and carbon removal will take in the future), plausible cooling targets (}\DIFdelend \DIFaddbegin \DIFadd{. Plausible cooling targets can be identified by }\DIFaddend considering the low likelihood and lack of desirability of too large, abrupt cooling amounts\DIFdelbegin \DIFdel{) and plausible intervention strategies (potentially constraining them }\DIFdelend \DIFaddbegin \DIFadd{. Plausible intervention strategies can be identified }\DIFaddend through economic analyses of regional and local benefits, as well as through analyses of the actual size of meaningfully different strategies from a climatic perspective\DIFdelbegin \DIFdel{)}\DIFdelend . However, human behavior cannot be constrained solely through optimization analyses, and it remains critical that different methods of study and analyses are welcomed in trying to think through future scenarios that include SAI.
+
+Concluding, it is very important to underscore that our results should not be read as a simplistic claim that SAI is not uncertain, or that what we have presented is sufficient to make decisions about SAI deployment. Quite the contrary, they highlight the specific challenge that is posed by SAI as a concept and to SAI as a research field: the addition of a further dimension, or rather a set of dimensions, on top of what is already a complicated human, economic and natural system. It is certainly likely that the reduction in climatic uncertainty that is in theory attainable through a uniform, well done deployment might be matched, if not dwarfed, by the added uncertainty to the socio-political realm, of whether such a well-envisioned deployment is tenable at all.
+
+Ultimately, however, our results do make the point that picturing the climatic response to SAI as inherently ``unknowable'' is not supported by modeling results, and that further improvements to our understanding of the many physical processes involved in stratospheric aerosol can further build confidence in what such a response would be.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional Appendices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\appendix
+%\section{Appendix Title Here}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DATA AND ACKNOWLEDGMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Open Research Section}
+CMIP and GeoMIP results are available from the Earth System Grid Federation \url{https://metagrid.esgf-west.org/search/cmip6/}. CESM2 data used for Section 3.4 are available at \url{https://doi.org/10.5281/zenodo.7545452} (for the different strategies) and \url{https://doi.org/10.7298/xr82-sv86} (for the different temperature targets). SOCOL data is available at \url{https://doi.org/10.5281/zenodo.18184688}. All code used for the analyses is available at \url{https://github.com/dan-visioni/geoengineering-uncertainty-analysis} and will be updated to a permanent DOI upon publication.
+
+\section*{Conflict of Interest declaration}
+The authors declare there are no conflicts of interest for this manuscript.
+
+\acknowledgments
+Support for BK was provided in part by NOAA's Climate Program Office, Earth's Radiation Budget (ERB) (Grant NA22OAR4310479), and the Indiana University Environmental Resilience Institute. \DIFaddbegin \DIFadd{DV and DGM would like to acknowledge the Quadrature Climate Foundation; Support for DV was also provided in part by NOAA's Climate Program Office, Earth's Radiation Budget (ERB) (Grant NA26OARX431G0007-T1-01). }[\DIFadd{Additional funding acknowledgments for GC, TS and SV to be added by co-authors.}] \DIFaddend An AI tool (Claude) was used to port the original Matlab code to Python, originally written by DV, as well as to check the manuscript for inconsistencies.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliography{reference}
+
+\end{document}
