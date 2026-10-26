@@ -49,7 +49,7 @@ def load_res(deg, var):
 import matplotlib as _mpl
 _mpl.rcParams.update({
     'font.size': 18,
-    'axes.titlesize': 20,
+    'axes.titlesize': 16,
     'axes.labelsize': 18,
     'xtick.labelsize': 13,
     'ytick.labelsize': 13,
@@ -59,6 +59,7 @@ _mpl.rcParams.update({
 
 fc = brewermap(4, "Spectral")
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+fig.subplots_adjust(wspace=0.3)   # room between panels so titles/labels don't collide
 
 # NOTE: figure creation and ALL plotting must stay in ONE cell. With the inline
 # backend, a figure is displayed (and closed) at the end of the cell that

@@ -244,24 +244,29 @@ def dashboard(res, regions, var_label, normalize, default_ylim, glob_ylim, outna
 
     # global block (middle-left)
     yg, ybg = res["global"]
-    axgl = fig.add_axes([0.035, 0.520, BW, HL]); axgp = fig.add_axes([0.035, 0.375, BW, HP])
+    # wider gap than the region blocks: the partition panel has its own title
+    axgl = fig.add_axes([0.035, 0.519, BW, HL]); axgp = fig.add_axes([0.035, 0.360, BW, HP])
     line_panel(axgl, yg, ybg, normalize, glob_ylim)
     axgl.set_title("Global mean", fontsize=18, fontweight="bold")
     part_panel(axgp, yg)
-    axgp.set_title("Global partition", fontsize=16)
+    axgp.set_title("Global partition", fontsize=16, fontweight="bold")
 
-    # combined legend (middle-right)
-    axleg = fig.add_axes([0.775, 0.39, 0.21, 0.24]); axleg.axis("off")
+    # combined legend (middle-right): spans the free gap between the top and
+    # bottom region rows; the partition legend is stacked directly below the
+    # time-series legend so the two can never overlap
+    axleg = fig.add_axes([0.775, 0.335, 0.21, 0.315]); axleg.axis("off")
     hs = [axleg.plot([], [], color=fc[ix], lw=3)[0] for ix in range(7)]
     hs.append(axleg.plot([], [], "k", lw=3)[0])
-    leg1 = axleg.legend(hs, exp2 + ["SSP2-4.5"], loc="upper center", fontsize=14,
-                        frameon=True, title="Time series (line panels)", title_fontsize=14)
+    leg1 = axleg.legend(hs, exp2 + ["SSP2-4.5"], loc="upper center",
+                        bbox_to_anchor=(0.5, 1.0), fontsize=13, frameon=True,
+                        title="Time series (line panels)", title_fontsize=13)
     axleg.add_artist(leg1)
+    bb = leg1.get_window_extent(fig.canvas.get_renderer()).transformed(axleg.transAxes.inverted())
     parts = [mpatches.Patch(color=AREA_C[0], label="Scenario (target)"),
              mpatches.Patch(color=AREA_C[1], label="Strategy"),
              mpatches.Patch(color=AREA_C[2], label="Internal variability")]
-    axleg.legend(handles=parts, loc="lower center", fontsize=14, frameon=True,
-                 title="Uncertainty partition", title_fontsize=14)
+    axleg.legend(handles=parts, loc="upper center", bbox_to_anchor=(0.5, bb.y0 - 0.03),
+                 fontsize=13, frameon=True, title="Uncertainty partition", title_fontsize=13)
 
     # region blocks + leader lines
     for r in regions:
